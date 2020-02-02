@@ -1,25 +1,29 @@
 {
-  "name": "flostedflakes",
+  "name": "FlostedFlakes",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "mongoose": "^5.8.9",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LazaroPerez0823/FlostedFlakes.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/LazaroPerez0823/FlostedFlakes/issues"
   },
-  "homepage": "https://github.com/LazaroPerez0823/FlostedFlakes#readme",
-  "dependencies": {
-    "axios": "^0.19.2",
-    "cheerio": "^1.0.0-rc.3",
-    "express": "^4.17.1",
-    "mongoose": "^5.8.9"
-  }
+  "homepage": "https://github.com/LazaroPerez0823/FlostedFlakes#readme"
 }
