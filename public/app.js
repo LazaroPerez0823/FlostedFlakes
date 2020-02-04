@@ -1,9 +1,28 @@
 // Grab the articles as a json
+
+
+$("#scrape").on("click", function(){
+ 
+  $.getJSON("/articles", function (data) {
+    // For each one
+    for (var i = 0; i < data.length; i++) {
+      // Display the apropos information on the page
+      $("#articles").append("<p data-id='" + data[i]._id + "'>" + "<strong>" + data[i].title + "</strong>" + "<br /> <br />" + data[i].summary + "<br /> <br />" + "<a href='" + data[i].link + "'>" + "Click here for the full article" + "</a>" + "<br /> <br />" + "<img src ='" + data[i].image + "'>" + "<hr> </p>");
+    }
+  });
+  $("#clear").on("click", function(){
+    $("#articles").empty();
+    $("#note").empty();
+  })
+  });
+
+
 $.getJSON("/articles", function(data) {
   // For each one
+  
   for (var i = 0; i < data.length; i++) {
     // Display the apropos information on the page
-    $("#articles").append("<p data-id='" + data[i]._id + "'>" + "<strong>" + data[i].title + "</strong>" + "<br /> <br />" + data[i].summary + "<br /> <br />" + "<a href='" + data[i].link + "'>" + "Click here for the full article" + "</a>" + "<br /> <br />" + "<img src ='" + data[i].image + "'>" + "</p>");
+    $("#articles").append("<p data-id='" + data[i]._id + "'>" + "<strong>" + data[i].title + "</strong>" + "<br /> <br />" + data[i].summary + "<br /> <br />" + "<a href='" + data[i].link + "'>" + "Click here for the full article" + "</a>" + "<br /> <br />" + "<img src ='" + data[i].image + "'>" + "<hr> </p>");
   }
 });
 
