@@ -14,6 +14,7 @@ function scrapeArticles() {
 
   $( "#clear" ).click(function() {
     $( "#articles" ).empty();
+    $( "#notes" ).empty();
   });
 
 
