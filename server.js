@@ -29,6 +29,8 @@ app.use(express.static("public"));
 // Connect to the Mongo DB
 mongoose.connect("mongodb://localhost/mongoHeadlines", { useNewUrlParser: true });
 
+
+
 // Routes
 
 // A GET route for scraping the echoJS website
@@ -107,6 +109,22 @@ app.get("/articles/:id", function(req, res) {
       res.json(err);
     });
 });
+
+
+app.get("/clear", function(req, res) {
+
+  dbo.dropCollection("MongoHeadlines", function(err, delOK) {
+  ({})
+  })
+
+.catch(function(err) {
+  // If an error occurred, send it to the client
+  res.json(err);
+});
+});
+
+
+
 
 // Route for saving/updating an Article's associated Note
 app.post("/articles/:id", function(req, res) {
